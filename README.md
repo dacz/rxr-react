@@ -1,5 +1,7 @@
 # rxr-react
 
+[![Build Status](https://travis-ci.org/dacz/rxr-react.svg?branch=master)](https://travis-ci.org/dacz/rxr-react)
+
 React bindings for [rxr](https://github.com/dacz/rxr) (RxJS the Redux way).
 
 > Use [RxJS](https://github.com/ReactiveX/rxjs) with React the way similar to Redux. If you know Redux, rxr introduces very similar concept using into RxJS. It allows to **rewrite Redux app** to use pure RxJS with rxr fast with **most of the main code intact**. This is huge benefit when you want just play with something you already have. To learn, to play... ;)
