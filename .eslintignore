@@ -1,0 +1,6 @@
+node_modules/*
+webpack.config*.js
+build/*
+prepublish.js
+dist/*
+lib/*
