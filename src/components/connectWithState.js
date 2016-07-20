@@ -26,7 +26,7 @@ const connectWithState = (selector = (state) => state) => (WrappedComponent) =>
 
       render() {
         return (
-          <WrappedComponent {...this.state} {...this.props} />
+          <WrappedComponent { ...this.state } { ...this.props } />
         );
       }
     };
