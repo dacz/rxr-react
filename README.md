@@ -8,7 +8,7 @@ React bindings for [rxr](https://github.com/dacz/rxr) (RxJS the Redux way).
 >
 >I'm sure there are different ways how to use RxJS with React. Redux is very popular (and I like it a lot!) and it established some code structure and thinking about the app. Applying RxJS the Redux way has a lot of benefits. We may build on what we know and therefore it's easier to learn RxJS.
 
-... [read more on rxr](https://github.com/dacz/rxr).
+... [read more about rxr](https://dacz.github.io/rxr/).
 
 
 ## Basic usage
