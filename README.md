@@ -10,6 +10,8 @@ React bindings for [rxr](https://github.com/dacz/rxr) (RxJS the Redux way).
 
 ... [read more about rxr](https://dacz.github.io/rxr/).
 
+... Small demo example (just RxR for now): [rxr-redux-example](https://github.com/dacz/rxr-redux-example).
+
 
 ## Basic usage
 
