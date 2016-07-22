@@ -11,7 +11,7 @@ React bindings for [rxr](https://github.com/dacz/rxr) (RxJS the Redux way).
 
 ... [read more about rxr](https://dacz.github.io/rxr/).
 
-... Small demo example (just RxR for now): [rxr-redux-example](https://github.com/dacz/rxr-redux-example).
+... demo example with commented differences between Redux and RxR in the docs: [rxr-redux-example](https://github.com/dacz/rxr-redux-example).
 
 
 ## Basic usage
@@ -56,6 +56,3 @@ const MyHoCContainer = connectWithState(selector)(MyContainer);
 ```
 
 The props `MyContainer` gets are `itemsSelected` (array to display) and `userSelected` - action that is supposed to be invoked somehow like `... onClick={ userSelected('itemA') } ...`.
-
-
-### I'll add more details here very soon.
