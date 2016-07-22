@@ -1,6 +1,7 @@
 # rxr-react
 
 [![Build Status](https://travis-ci.org/dacz/rxr-react.svg?branch=master)](https://travis-ci.org/dacz/rxr-react)
+[![npm](https://img.shields.io/npm/v/rxr-react.svg?maxAge=2592000)](https://www.npmjs.com/package/rxr-react)
 
 React bindings for [rxr](https://github.com/dacz/rxr) (RxJS the Redux way).
 
