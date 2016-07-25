@@ -19,17 +19,31 @@ React bindings for [rxr](https://github.com/dacz/rxr) (RxJS the Redux way).
 ```javascript
 import React from 'react';
 import { render } from 'react-dom';
-import Rx from 'rxjs';
-import { createState } from 'rxr';
 import { Provider } from 'rxr-react';
+import { createState, createLoggerStream, startLogging, messageStreamsMonitor$ } from 'rxr';
 
-const userSelected$ = new Rx.Subject;
-const userReducer$ = userSelected$
-  .map(val => (state) => ({ ...state, itemsSelected: state.itemsSelected.push(val) }));
-const initialState = { itemsSelected: [] };
+import styles from './index.css';
 
-const state$ = createState(userReducer$, initialState);
+import App from './components/App';
 
+// our RxR reducers
+import reducer$ from './reducers';
+
+// we create initial state here
+const initialState = {
+  clients:        { data: [], ts: 0, status: undefined },
+  filter:         '',
+  selectedClient: '',
+};
+
+// and because in RxR is no need of store, we create state directly
+const state$ = createState(reducer$, initialState);
+
+// we will log all state changes  and messageStreams events to console
+const loggerStream$ = createLoggerStream(state$, messageStreamsMonitor$);
+startLogging(loggerStream$);
+
+// RxR-React provides similar Provider component as React-Redux
 render(
   <Provider state$={ state$ }>
     <App />
@@ -43,7 +57,7 @@ and to connect the component...
 import { connectWithState } from 'rxr-react';
 import MyContainer from './MyContainer';
 // lets's suppose that our userSelected$ stream was bound with next()
-// (see rxr createPushMessageFunctions) and is part of userActions
+// (see RxR createPushMessageFunctions) and is part of userActions
 // structure
 import userActions from './userActions';
 
@@ -56,3 +70,7 @@ const MyHoCContainer = connectWithState(selector)(MyContainer);
 ```
 
 The props `MyContainer` gets are `itemsSelected` (array to display) and `userSelected` - action that is supposed to be invoked somehow like `... onClick={ userSelected('itemA') } ...`.
+
+### Working Demo
+
+Example with commented differences between Redux and RxR in the docs: [rxr-redux-example](https://github.com/dacz/rxr-redux-example).
